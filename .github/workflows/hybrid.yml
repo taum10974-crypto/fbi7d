@@ -1,4 +1,4 @@
-name: Hy-hyb
+name: Hybd2ddd
 
 on:
   workflow_dispatch:
@@ -96,7 +96,6 @@ jobs:
             "host": "${{ inputs.proxy }}",
             "user": "${{ inputs.user }}",
             "pass": "${{ inputs.password }}",
-            "argent": ${{ inputs.argent }},
             "threads": ${{ inputs.threads }}
           }
           EOF
