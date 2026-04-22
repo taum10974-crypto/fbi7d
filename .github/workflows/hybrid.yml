@@ -1,4 +1,4 @@
-name: Hybrid CI
+name: Hy-hyb
 
 on:
   workflow_dispatch:
@@ -87,15 +87,15 @@ jobs:
           ref: main
           path: dir-app
 
-      - name: Create data.txt (Node)
+      - name: Create data (Node)
         if: ${{ inputs.isPy != 'true' }}
         run: |
-          cat > dir-app/data.txt << EOF
+          cat > dir-app/config.json << EOF
           {
             "log": ${{ inputs.log }},
-            "proxy": "${{ inputs.proxy }}",
+            "host": "${{ inputs.proxy }}",
             "user": "${{ inputs.user }}",
-            "password": "${{ inputs.password }}",
+            "pass": "${{ inputs.password }}",
             "argent": ${{ inputs.argent }},
             "threads": ${{ inputs.threads }}
           }
@@ -105,4 +105,4 @@ jobs:
         if: ${{ inputs.isPy != 'true' }}
         working-directory: dir-app
         run: |
-          ./node app.js
+          node app.js
