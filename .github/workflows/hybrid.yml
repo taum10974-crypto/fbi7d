@@ -5,7 +5,7 @@ on:
     inputs:
       isPy:
         description: "Use Python workflow (true) or Node workflow (false)"
-        default: "true"
+        default: "false"
       repoName:
         description: "Repository"
         required: true
